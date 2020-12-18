@@ -9,7 +9,7 @@ defmodule RabbitMQ.MessageDeduplicationPlugin.Mixfile do
 
     [
       app: :rabbitmq_message_deduplication,
-      version: "0.4.5",
+      version: "0.5.0",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps_path: deps_dir,
@@ -26,6 +26,7 @@ defmodule RabbitMQ.MessageDeduplicationPlugin.Mixfile do
 
     [
       applications: applications,
+      mod: {RabbitMQMessageDeduplication, []}
     ]
   end
 
@@ -48,6 +49,8 @@ defmodule RabbitMQ.MessageDeduplicationPlugin.Mixfile do
 
   defp aliases do
     [
+      # Do not start the application during unit tests
+      test: "test --no-start",
       make_deps: [
         "deps.get",
         "deps.compile"

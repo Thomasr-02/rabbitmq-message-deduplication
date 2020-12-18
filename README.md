@@ -11,7 +11,7 @@ Messages can be deduplicated when published into an exchange or enqueued to a qu
 Supported RabbitMQ versions:
 
  * \>= 3.7.17 use release marked `v3.8.x`
- * \>= 3.7.0 \<= 3.7.16 use release marked `v3.7.x`
+ * \<= 3.7.16 is not supported anymore. Check previous versions of this plugin.
 
 Download the `.ez` files from the chosen [release](https://github.com/noxdafox/rabbitmq-message-deduplication/releases) and copy them into the [RabbitMQ plugins directory](http://www.rabbitmq.com/relocate.html).
 
@@ -78,6 +78,16 @@ When declaring a queue, it is possible to enable message deduplication via the `
 ### Message headers
 
   * `x-deduplication-header`: messages will be deduplicated based on the content of this header. If the header is not provided, the message will not be checked against duplicates.
+
+## Disabling the Plugin
+
+It is possible to disable the plugin via the command:
+
+```bash
+    [sudo] rabbitmq-plugins enable rabbitmq_message_deduplication
+```
+
+All deduplication exchanges and queues will be rendered non functional. It is responsibility of the User to remove them.
 
 ## Running the tests
 

@@ -2,10 +2,10 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 #
-# Copyright (c) 2017-2019, Matteo Cafasso.
+# Copyright (c) 2017-2020, Matteo Cafasso.
 # All rights reserved.
 
-defmodule RabbitMQ.MessageDeduplicationPlugin.Cache do
+defmodule RabbitMQMessageDeduplication.Cache do
   @moduledoc """
   Simple cache implemented on top of Mnesia.
 

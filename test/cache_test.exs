@@ -2,15 +2,15 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 #
-# Copyright (c) 2017-2019, Matteo Cafasso.
+# Copyright (c) 2017-2020, Matteo Cafasso.
 # All rights reserved.
 
-defmodule RabbitMQ.MessageDeduplicationPlugin.Cache.Test do
+defmodule RabbitMQMessageDeduplication.Cache.Test do
   use ExUnit.Case
 
   alias :timer, as: Timer
   alias :mnesia, as: Mnesia
-  alias RabbitMQ.MessageDeduplicationPlugin.Cache, as: Cache
+  alias RabbitMQMessageDeduplication.Cache, as: Cache
 
   setup do
     cache = :test_cache
